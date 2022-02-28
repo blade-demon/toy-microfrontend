@@ -1,8 +1,4 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-subapps/subapp-jquerywebpack/dist
-subapps/subapp-jquerywebpack/node_modules
-subapps/subapp-react/node_modules
-subapps/subapp-vue/node_modules
 
 # dependencies
 node_modules

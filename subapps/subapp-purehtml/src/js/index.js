@@ -1,5 +1,5 @@
 const render = ($) => {
-  $("#purehtml-container").html("Hello, render with jQuery");
+  $("#purehtml-container").html("Hello, render with jQuery!");
   return Promise.resolve();
 };
 

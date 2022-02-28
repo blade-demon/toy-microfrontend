@@ -4,12 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+const renderApp = (props = {}) => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App {...props} />
+    </React.StrictMode>,
+    document.getElementById("root")
+  );
+};
+
+renderApp();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
@@ -28,12 +32,7 @@ export async function bootstrap() {
  * 应用每次进入都会调用 mount 方法，通常我们在这里触发应用的渲染方法
  */
 export async function mount(props) {
-  ReactDOM.render(
-    <App />,
-    props.container
-      ? props.container.querySelector("#root")
-      : document.getElementById("root")
-  );
+  renderApp(props);
 }
 
 /**
@@ -52,4 +51,5 @@ export async function unmount(props) {
  */
 export async function update(props) {
   console.log("update props", props);
+  renderApp(props);
 }

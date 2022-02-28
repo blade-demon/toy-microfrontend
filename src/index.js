@@ -31,18 +31,18 @@ registerMicroApps([
   //   container: "#micro-container",
   //   activeRule: "/subapp-jquery",
   // },
-  // {
-  //   name: "subapp-react", // app name registered
-  //   entry: "http://localhost:3001",
-  //   container: "#micro-container",
-  //   activeRule: "/subapp-react",
-  // },
-  // {
-  //   name: "vue app", // app name registered
-  //   entry: "http://localhost:8082",
-  //   container: "#micro-container",
-  //   activeRule: "/subapp-vue",
-  // },
+  {
+    name: "subapp-react", // app name registered
+    entry: "http://localhost:3001",
+    container: "#micro-container",
+    activeRule: "/subapp-react",
+  },
+  {
+    name: "subapp-vue", // app name registered
+    entry: "http://localhost:8082",
+    container: "#micro-container",
+    activeRule: "/subapp-vue",
+  },
 ]);
 
 start();

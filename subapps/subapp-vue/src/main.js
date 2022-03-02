@@ -2,14 +2,16 @@ import { createApp } from "vue";
 import App from "./App.vue";
 
 let app;
-const renderApp = (props = {}) => {
+const renderApp = (props) => {
   const { container } = props;
 
   app = createApp(App);
   app.mount(container ? container.querySelector("#app") : "#app");
 };
 
-renderApp();
+if (!window.__POWERED_BY_QIANKUN__) {
+  renderApp({});
+}
 
 export async function bootstrap() {
   console.log("vue3.0 app bootstraped");
@@ -29,5 +31,5 @@ export async function mount(props) {
 export async function unmount() {
   console.log("vue3.0 app unmounted");
   app.unmount();
-  app = null;
+  // app = null;
 }

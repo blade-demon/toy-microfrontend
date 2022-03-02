@@ -1,5 +1,10 @@
+/**
+ * 渲染页面，返回一个promise
+ * @param {Object} $
+ * @returns Promise
+ */
 const render = ($) => {
-  $("#purehtml-container").html("Hello, render with jQuery!");
+  // $("#purehtml-container").html("Hello, render with jQuery!");
   return Promise.resolve();
 };
 

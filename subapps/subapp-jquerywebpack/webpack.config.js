@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const packageName = require("./package.json").name;
 
 module.exports = {
   mode: "development",
@@ -7,6 +8,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "bundle.js",
+    // 这里改成跟主应用中注册的一致
+    library: "jQueryWebpackSubApp",
+    libraryTarget: "window",
+    chunkLoadingGlobal: `webpackJsonp_${packageName}`,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -17,6 +22,9 @@ module.exports = {
   devServer: {
     static: {
       directory: path.join(__dirname, "dist"),
+    },
+    headers: {
+      "Access-Control-Allow-Origin": "*",
     },
     compress: true,
     port: 9000,

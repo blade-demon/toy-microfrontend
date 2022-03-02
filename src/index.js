@@ -20,17 +20,17 @@ reportWebVitals();
 // 注册微应用
 registerMicroApps([
   {
-    name: "javascript app", // app name registered
-    entry: "http://127.0.0.1:5500/subapps/subapp-purehtml/src/index.html",
+    name: "subapp-jquerywebpack", // app name registered
+    entry: "http://localhost:9000",
+    container: "#micro-container",
+    activeRule: "/subapp-jquerywebpack",
+  },
+  {
+    name: "subapp-purehtml", // app name registered
+    entry: "http://localhost:3002",
     container: "#micro-container",
     activeRule: "/subapp-purehtml",
   },
-  // {
-  //   name: "jquery with webpack app", // app name registered
-  //   entry: "//localhost:3002",
-  //   container: "#micro-container",
-  //   activeRule: "/subapp-jquery",
-  // },
   {
     name: "subapp-react", // app name registered
     entry: "http://localhost:3001",
@@ -39,7 +39,7 @@ registerMicroApps([
   },
   {
     name: "subapp-vue", // app name registered
-    entry: "http://localhost:8082",
+    entry: "http://localhost:3004",
     container: "#micro-container",
     activeRule: "/subapp-vue",
   },

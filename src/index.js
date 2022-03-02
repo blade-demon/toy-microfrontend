@@ -20,10 +20,10 @@ reportWebVitals();
 // 注册微应用
 registerMicroApps([
   {
-    name: "subapp-jquerywebpack", // app name registered
-    entry: "http://localhost:9000",
+    name: "subapp-webpackbundled", // app name registered
+    entry: "http://localhost:3003",
     container: "#micro-container",
-    activeRule: "/subapp-jquerywebpack",
+    activeRule: "/subapp-webpackbundled",
   },
   {
     name: "subapp-purehtml", // app name registered

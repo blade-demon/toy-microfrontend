@@ -9,14 +9,14 @@ module.exports = {
     path: path.resolve(__dirname, "./dist"),
     filename: "bundle.js",
     // 这里改成跟主应用中注册的一致
-    library: "jQueryWebpackSubApp",
-    libraryTarget: "window",
+    library: `${packageName}-[name]`,
+    libraryTarget: "umd",
     chunkLoadingGlobal: `webpackJsonp_${packageName}`,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "jquery with webpack",
-      filename: "./src/index.html",
+      title: "webpack bundled app",
+      template: "./src/index.html",
     }),
   ],
   devServer: {
@@ -27,6 +27,6 @@ module.exports = {
       "Access-Control-Allow-Origin": "*",
     },
     compress: true,
-    port: 9000,
+    port: 3003,
   },
 };

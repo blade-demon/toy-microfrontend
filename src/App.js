@@ -17,7 +17,7 @@ function App() {
                   <Link to="/subapp-purehtml">子应用1</Link>
                 </li>
                 <li className="sub-meanu">
-                  <Link to="/subapp-jquery_wqebpack">子应用2</Link>
+                  <Link to="/subapp-webpackbundled">子应用2</Link>
                 </li>
                 <li className="sub-meanu">
                   <Link to="/subapp-react">子应用3</Link>

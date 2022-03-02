@@ -1,10 +1,10 @@
 {
-  "name": "subapp-jquerywebpack",
+  "name": "subapp-webpackbundled",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "serve": "webpack serve"
+    "serve": "webpack && webpack serve"
   },
   "dependencies": {
     "html-webpack-plugin": "^5.5.0"

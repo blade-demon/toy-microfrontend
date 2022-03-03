@@ -5,7 +5,8 @@ const renderApp = (props) => {
   const mountedNode = container
     ? container.querySelector("#app")
     : document.body.querySelector("#app");
-  mountedNode.innerHTML = "<div>hhhh</div>";
+  mountedNode.innerHTML =
+    "<div> This is a subapp. <button>我也是一个按钮</button> </div>";
   console.log("mountedNode", mountedNode);
   console.log("app rendered");
 };

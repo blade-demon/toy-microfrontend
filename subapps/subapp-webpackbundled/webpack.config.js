@@ -13,6 +13,14 @@ module.exports = {
     libraryTarget: "umd",
     chunkLoadingGlobal: `webpackJsonp_${packageName}`,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: "webpack bundled app",

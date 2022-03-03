@@ -1,3 +1,5 @@
+import "./index.css";
+
 const renderApp = (props) => {
   const { container } = props;
   const mountedNode = container

@@ -1,12 +1,21 @@
 import { createApp } from "vue";
+import routes from "./router";
 import App from "./App.vue";
+import { createRouter, createWebHistory } from "vue-router";
 
 let app;
 const renderApp = (props) => {
-  const { container } = props;
+  const { container, routerBase } = props;
+  const router = createRouter({
+    history: createWebHistory(
+      window.__POWERED_BY_QIANKUN__ ? routerBase : process.env.BASE_URL
+    ),
+    routes,
+  });
 
-  app = createApp(App);
-  app.mount(container ? container.querySelector("#app") : "#app");
+  app = createApp(App); // 创建app实例
+  app.use(router); // 加载路由
+  app.mount(container ? container.querySelector("#app") : "#app"); // 设置app挂载点
 };
 
 if (!window.__POWERED_BY_QIANKUN__) {
@@ -22,6 +31,8 @@ export async function bootstrap() {
  */
 export async function mount(props) {
   console.log("[vue3.0] app mounted");
+  console.log("props", props);
+
   renderApp(props);
 }
 
@@ -31,5 +42,5 @@ export async function mount(props) {
 export async function unmount() {
   console.log("[vue3.0] app unmounted");
   app.unmount();
-  // app = null;
+  app = null;
 }

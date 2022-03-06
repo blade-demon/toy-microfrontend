@@ -36,12 +36,18 @@ registerMicroApps([
     entry: "http://localhost:3001",
     container: "#micro-container",
     activeRule: "/subapp-react",
+    props: {
+      routerBase: "/subapp-react", // 下发路由给子应用，子应用根据该值去定义qiankun环境下的路由
+    },
   },
   {
     name: "subapp-vue", // app name registered
     entry: "http://localhost:3004",
     container: "#micro-container",
     activeRule: "/subapp-vue",
+    props: {
+      routerBase: "/subapp-vue", // 下发路由给子应用，子应用根据该值去定义qiankun环境下的路由
+    },
   },
 ]);
 

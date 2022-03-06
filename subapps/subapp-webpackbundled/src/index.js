@@ -5,13 +5,22 @@ const renderApp = (props) => {
   const mountedNode = container
     ? container.querySelector("#app")
     : document.body.querySelector("#app");
-  mountedNode.innerHTML =
-    "<div> This is a subapp. <button>我也是一个按钮</button> </div>";
+  // mountedNode.innerHTML = `<div> This is a subapp.`;
+  const buttonNode = document.createElement("button");
+  buttonNode.addEventListener("click", function (e) {
+    alert("我是子应用2的按钮！");
+  });
+  buttonNode.innerText = "点我！";
+  mountedNode.appendChild(buttonNode); // 追加新元素
+
   console.log("mountedNode", mountedNode);
+
   console.log("app rendered");
 };
 
-renderApp({});
+if (!window.__POWERED_BY_QIANKUN__) {
+  renderApp({});
+}
 
 /**
  * bootstrap 只会在微应用初始化的时候调用一次，下次微应用重新进入时会直接调用 mount 钩子，不会再重复触发 bootstrap。

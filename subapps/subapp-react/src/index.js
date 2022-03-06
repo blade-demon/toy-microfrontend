@@ -6,11 +6,11 @@ import App from "./App";
 const defaultRootNode = document.getElementById("root");
 
 const renderApp = (props = {}) => {
-  const { container } = props;
+  const { container, routerBase } = props;
 
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <App routerBase={routerBase} />
     </React.StrictMode>,
     container ? container.querySelector("#root") : defaultRootNode
   );

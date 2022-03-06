@@ -5,9 +5,12 @@ import About from "./components/About/About";
 import Users from "./components/Users/Users";
 import "./App.css";
 
-function App() {
+function App(props) {
+  console.log("react props", props);
+  const routeBase = window.__POWERED_BY_QIANKUN__ ? props.routerBase : "/";
+  console.log("react route base:", routeBase);
   return (
-    <Router>
+    <Router basename={routeBase}>
       <div>
         <nav>
           <ul>

@@ -7,6 +7,7 @@ let app;
 const renderApp = (props) => {
   const { container, routerBase } = props;
   const router = createRouter({
+    // 根据宿主应用下发的routerBase设置应用的相对路由
     history: createWebHistory(
       window.__POWERED_BY_QIANKUN__ ? routerBase : process.env.BASE_URL
     ),
@@ -18,6 +19,7 @@ const renderApp = (props) => {
   app.mount(container ? container.querySelector("#app") : "#app"); // 设置app挂载点
 };
 
+// 非乾坤环境独立运行
 if (!window.__POWERED_BY_QIANKUN__) {
   renderApp({});
 }
